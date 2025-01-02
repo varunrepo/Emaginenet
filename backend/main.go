@@ -18,7 +18,6 @@ func main() {
 	repo := repositories.NewPhoneRepository(config.DB)
 	r := router.InitializeRouter(repo)
 
-	// Define CORS options
 	corsHandler := handlers.CORS(
 		handlers.AllowedOrigins([]string{"http://127.0.0.1:5500"}),                   // Allow all origins (or specify specific domains)
 		handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE", "OPTIONS"}), // Allow specific HTTP methods
