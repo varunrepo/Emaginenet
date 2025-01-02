@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EmagineNET</title>
+  <link rel="stylesheet" href="style.css">
+  <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  rel="stylesheet"
+/>
+</head>
+<body>
+  <header>
+    <span class="header-title">EmagineNET QuickCheck</span>
+  </header>
+  <div class="container">
+    <div class="card-title">Manage PhoneNumber</div>
+    <div class="filter-container">
+      <label>
+        <input type="checkbox" id="filterBlocked" /> Show Blocked Only
+      </label>     
+      <button id="openModal">Add Phone Number</button>
+    </div>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search by phone number..." />
+      <button id="clearButton">Clear</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Phone Number</th>
+          <th>Status</th>
+          <th>Notes</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2 id="modalTitle">Add Phone Number</h2>
+      <form id="modalForm">
+        <input type="number" id="phoneNumber"  placeholder="Enter phone number"   minlength="10"  maxlength="10" />
+        <div id="phoneError" class="error-message"></div>
+        <select id="status">
+          <option value="active">Active</option>
+          <option value="blocked">Blocked</option>
+        </select>
+        <textarea id="notes" placeholder="Add notes"></textarea>
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="delete-modal" id="confirmationModal">
+    <div class="delete-modal-content">
+      <h3 id="deleteModalTitle">Confirm Action</h3>
+      <p id="deleteModalMessage">Are you sure you want to proceed?</p>
+      <div class="modal-actions">
+        <button id="confirmButton">Confirm</button>
+        <button id="cancelButton">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 EmagineNET QuickCheck. All rights reserved.</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
